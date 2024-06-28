@@ -10,7 +10,6 @@ export async function handleErrors(response: Response): Promise<any> {
     const data = isJson && (await response.json());
 
     if (!response.ok) {
-        console.log(data);
         const error: string = data || response.status.toString();
         return Promise.reject(error);
     }
